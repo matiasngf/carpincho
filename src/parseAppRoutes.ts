@@ -8,7 +8,8 @@ export const parseAppRoutes = (pathList: string[]) => {
   pathList.forEach(path => {
     let routeUrl = path
       .replaceAll(/\\/g, '/')
-      .replace(/^\/routes/, '')
+      .replaceAll(/\/\$/g, '/:')
+      .replace(/^routes/, '')
       .replace(/.api.[tj]s$/, '')
       .replace(/\/index$/, '/');
     const importPath = path.replaceAll(/\\/g, '/');

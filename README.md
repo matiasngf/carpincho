@@ -1,8 +1,8 @@
-# carpincho
+# carpincho 🧉
 
 > The express framework.
 
-Build backend applications with zero configuration, typescript support, and schema validations in seconds.
+Build backend applications with zero configuration, typescript support, and schema validations in seconds. Inspired in NextJs ♥
 
 ## Getting started
 - Create a folder for your project and install *carpincho*
@@ -50,6 +50,8 @@ export const GET = (req, res) => {
 ```
 
 ## Data validation
+
+🚧 PENDING FEATURE
 ```typescript
 import { Joi } from 'carpincho';
 
@@ -67,6 +69,13 @@ POST.schema = {
 ```
 
 ## Using Typescript
+To start using typescript in an existing project, create an empty tsconfig.json file in the root folder:
+```bash
+touch tsconfig.json
+```
+Carpincho will configure this file with default values. Or you can edit it to your needs.
+
+### Typed requests and responses
 ```typescript
 // File /routes/users/$userId/books/$bookId.api.ts
 // URL  http://localhost:3000/users/42/posts/101
@@ -81,6 +90,14 @@ export const GET = (req: Request<Params>, res: Response) => {
   req.params; // { userId: '42', bookId: '101' }
   res.json(req.params);
 };
+```
+
+## Environment Variables
+Create a .env file with your environment variables and they will be loaded into `process.env`. <br>
+Example `.env`:
+```bash
+# .env
+PORT=3000
 ```
 
 ## 🧉

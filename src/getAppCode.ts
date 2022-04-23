@@ -1,10 +1,12 @@
 import generateIndex from './generators/generateIndex.hbs';
-import generateRouter from './generators/generateRoutes.hbs';
+import generateRoutes from './generators/generateRoutes.hbs';
+import generateTsConfig from './generators/generateTsConfig.hbs';
 import { AppRouteParsed } from './parseAppRoutes';
 
 export const generateAppCode = (routes: AppRouteParsed[] ) => {
   return {
     index: generateIndex(),
-    routes: generateRouter({routes})
+    routes: generateRoutes({routes}),
+    tsconfig: generateTsConfig()
   }
 }

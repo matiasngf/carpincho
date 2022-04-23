@@ -1,5 +1,3 @@
-import { Request } from 'carpincho'
-
 export const GET = (req, res) => {
   res.send('Hello World!');
 }

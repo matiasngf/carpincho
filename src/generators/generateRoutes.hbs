@@ -1,6 +1,6 @@
 const routes = {
   {{#each routes}}
-    "/{{this.routeUrl}}": require("../{{this.importPath}}"),
+    "{{this.routeUrl}}": require("../{{this.importPath}}"),
   {{/each}}
 }
 

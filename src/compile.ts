@@ -6,7 +6,7 @@ import chalk from 'chalk';
 import { handleGenerateAsync } from './handleGenerateAsync';
 
 export const compile = () => {
-  const watcher = chokidar.watch('./routes/**.api.ts', {
+  const watcher = chokidar.watch('./routes/**/*.api.ts', {
     ignored: /(^|[\/\\])\../,
     persistent: true
   });
@@ -19,9 +19,9 @@ export const compile = () => {
   })
   .on('ready', () => {
     watcher.close();
-    console.log(`${chalk.bgYellow('carpincho')} build started.`);
+    console.log(`${chalk.yellow('carpincho')} build started.`);
     handleGenerateAsync(pathList, 'production').then(() => {
-      console.log(`${chalk.bgYellow('carpincho')} build completed.`);
+      console.log(`${chalk.yellow('carpincho')} build completed.`);
     })
   })
 }

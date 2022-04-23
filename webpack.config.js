@@ -3,10 +3,20 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const nodeExternals = require("webpack-node-externals");
 
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-
 const { ProvidePlugin } = require("webpack");
-
 const webpack = require('webpack');
+
+const libsToExcludeFromCompilation = [
+  "webpack",
+  "webpack-virtual-modules",
+  "webpack-node-externals",
+  "handlebars",
+  "express",
+  "@swc/core",
+  "swc-loader",
+  "ts-loader",
+  "fork-ts-checker-webpack-plugin"
+]
 
 const config = {
   entry: path.join(__dirname, "src", "index.ts"),
@@ -14,15 +24,8 @@ const config = {
   externalsPresets: { node: true },
   externals: [nodeExternals({
     allowlist: (modulePath) => {
-      return !([
-        "webpack",
-        "webpack-virtual-modules",
-        "webpack-node-externals",
-        "handlebars",
-        "express",
-        "@swc/core",
-        "swc-loader"
-      ].includes(modulePath));
+      console.log(modulePath);
+      return !(libsToExcludeFromCompilation.includes(modulePath));
     }
   })],
   output: {

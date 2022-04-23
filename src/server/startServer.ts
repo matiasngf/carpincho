@@ -23,7 +23,7 @@ export const startServer = (projectRoutes: ProjectRoutes) => {
   
   const router = express.Router();
   
-  Object.entries(projectRoutes).forEach(([route, handlers]) => {
+  Object.entries(projectRoutes).forEach(([route, handlers]) => {    
     if(typeof handlers.GET === 'function') {
       router.get(route, handlers.GET);
     }
