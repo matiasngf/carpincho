@@ -19,7 +19,9 @@ const config = {
         "webpack-virtual-modules",
         "webpack-node-externals",
         "handlebars",
-        "express"
+        "express",
+        "@swc/core",
+        "swc-loader"
       ].includes(modulePath));
     }
   })],

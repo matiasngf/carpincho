@@ -3,7 +3,7 @@ import del from 'del'
 import webpack from 'webpack';
 import { generateWebackConfig } from './getWebpackConfig';
 
-const generatedDir = '.express-generator';
+const generatedDir = '.carpincho';
 
 export type GenerateMode = 'development' | 'production';
 

@@ -1,21 +1,22 @@
 {
+  "name": "carpincho",
   "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/matiasngf/experiment-compilers.git"
+    "url": "git+https://github.com/matiasngf/carpincho.git"
   },
   "license": "ISC",
-  "name": "express-generator",
   "main": "dist/index.js",
   "files": [
-    "dist"
+    "dist",
+    "bin"
   ],
   "scripts": {
     "build": "webpack --mode=production",
     "dev": "webpack --mode=development --watch"
   },
   "bin": {
-    "express-generator": "./bin/index.js"
+    "carpincho": "./bin/index.js"
   },
   "resolutions": {
     "uglify-js": "npm:terser"
@@ -34,6 +35,7 @@
   },
   "dependencies": {
     "@babel/core": "^7.17.9",
+    "@swc/core": "^1.2.171",
     "babel-loader": "^8.2.5",
     "chalk": "^5.0.1",
     "chokidar": "^3.5.3",
@@ -41,6 +43,7 @@
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "handlebars": "^4.7.7",
+    "swc-loader": "^0.2.0",
     "webpack": "^5.72.0",
     "webpack-node-externals": "^3.0.0",
     "webpack-virtual-modules": "^0.4.3",

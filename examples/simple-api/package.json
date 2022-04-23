@@ -1,9 +1,9 @@
 {
   "scripts": {
-    "build": "express-generator",
+    "build": "carpincho",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "express-generator": "../"
+    "carpincho": "../../"
   }
 }

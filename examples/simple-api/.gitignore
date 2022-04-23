@@ -1,3 +1,4 @@
-.express-generator
+.carpincho
 dist
 .env
+node_modules

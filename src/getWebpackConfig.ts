@@ -32,7 +32,7 @@ export const generateWebackConfig = (pathList: string[], mode: GenerateMode, out
           "webpack",
           "webpack-virtual-modules",
           "webpack-node-externals",
-          "express-generator"
+          "carpincho"
         ].includes(modulePath));
       }
     })],
